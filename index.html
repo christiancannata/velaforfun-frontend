@@ -1,10 +1,148 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Velaforfun</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <style>
+        body { padding-top: 125px; }
+    </style>
 </head>
-<body>
+
+<body >
+
+
+<div class="container-fluid">
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row clearfix">
+
+                <div class="col-md-4 column col-md-offset-4">
+                    <h3>
+                        Logo
+                    </h3>
+                </div>
+                <div class="col-md-4 column">
+
+                </div>
+            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <h3>
+                h3. Lorem ipsum dolor sit amet.
+            </h3>
+        </div>
+        <div class="col-md-4 column">
+            <h3>
+                h3. Lorem ipsum dolor sit amet.
+            </h3>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3 class="text-center">
+                h3. Lorem ipsum dolor sit amet.
+            </h3>
+        </div>
+    </div>
+</div>
+
+
+<script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="{{ asset('bundles/app/js/form.js') }}"></script>
+<script src="{{ asset('bundles/app/js/main.js') }}"></script>
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea',plugins: "textcolor",toolbar: "undo redo | styleselect | bold italic | link image | forecolor backcolor"});</script>
+<script language="javascript">
+    $(document).ready(function () {
+
+        var forms = [
+            '[ name="{{ form.vars.full_name }}"]'
+        ];
+
+        $(forms.join(',')).submit(function (e) {
+            e.preventDefault();
+            var form = $(this)
+            form.find('input[type="submit"],button').attr('disabled','disabled');
+            postForm($(this), function (response) {
+                if(response.success==true){
+                    showalert(form,"Creato con successo!","success")
+                }else{
+                    showalert(form,"Errore nella creazione","error")
+                }
+                form.find('input[type="submit"],button').removeAttr('disabled');
+            });
+
+            return false;
+        });
+
+    });
+</script>
 
 </body>
 </html>
