@@ -14,15 +14,16 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <style>
-        body { padding-top: 125px; }
+        body {
+            padding-top: 125px;
+        }
     </style>
 </head>
 
-<body >
+<body>
 
 
 <div class="container-fluid">
-
 
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -31,7 +32,8 @@
                 <div class="col-md-4 column">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <i class="fa fa-bars fa-lg"></i> Tutte le sezioni</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false"> <i class="fa fa-bars fa-lg"></i> Tutte le sezioni</a>
                             <ul class="dropdown-menu" role="menu">
 
                                 <li><a href="#">Action</a></li>
@@ -58,46 +60,126 @@
                     </ul>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
-
 
 
     <div class="row clearfix">
         <div class="col-md-4 column">
-            <h3>
-                Immagine 1
-            </h3>
-            <h3>
-                Immagine 2
-            </h3>
+            <div class="box-home">
+                <div class="content">
+                    <div class="box-action">
+
+                    </div>
+                    <h2>Titolo</h2>
+                </div>
+
+            </div>
+
         </div>
         <div class="col-md-4 column">
-            <h3>
-                Immagine 3
-            </h3>
-            <h3>
-                Immagine 4
-            </h3>
+            <div class="box-home">
+                <div class="content">
+                    <div class="box-action">
+
+                    </div>
+                    <h2>Titolo</h2>
+                </div>
+
+            </div>
+
+
         </div>
         <div class="col-md-4 column">
-            <h3>
-                Immagine 5
-            </h3>
-            <h3>
-                Immagine 6
-            </h3>
+            <div class="box-home">
+                <div class="content">
+                    <div class="box-action">
+
+                    </div>
+                    <h2>Titolo</h2>
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 
 
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <div class="box-home">
+                <div class="content">
+                    <div class="box-action">
+
+                    </div>
+                    <h2>Titolo</h2>
+                </div>
+
+            </div>
 
 
+        </div>
+        <div class="col-md-4 column">
+            <div class="box-home">
+                <div class="content">
+                    <div class="box-action">
+
+                    </div>
+                    <h2>Titolo</h2>
+                </div>
+
+            </div>
 
 
+        </div>
+        <div class="col-md-4 column">
+            <div class="box-home">
+                <div class="content">
+                    <div class="box-action">
+
+                    </div>
+                    <h2>Titolo</h2>
+                </div>
+
+            </div>
 
 
+        </div>
+    </div>
 
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <div class="title">
+                Last News
+            </div>
+            <div class="article main-article">
+
+                <div class="content" style="background-image: url(http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_13.jpg)">
+                    <div class="category">
+                        Category
+                    </div>
+                    <div class="content-title">
+                        <h3>Titolo</h3>
+
+                        <div class="clearfix"></div>
+                        <div class="subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua...
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 column">
+            <h3>
+                articolini
+            </h3>
+        </div>
+    </div>
 
 
     <div class="row clearfix">
@@ -145,12 +227,12 @@
         $(forms.join(',')).submit(function (e) {
             e.preventDefault();
             var form = $(this)
-            form.find('input[type="submit"],button').attr('disabled','disabled');
+            form.find('input[type="submit"],button').attr('disabled', 'disabled');
             postForm($(this), function (response) {
-                if(response.success==true){
-                    showalert(form,"Creato con successo!","success")
-                }else{
-                    showalert(form,"Errore nella creazione","error")
+                if (response.success == true) {
+                    showalert(form, "Creato con successo!", "success")
+                } else {
+                    showalert(form, "Errore nella creazione", "error")
                 }
                 form.find('input[type="submit"],button').removeAttr('disabled');
             });

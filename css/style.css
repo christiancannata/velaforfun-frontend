@@ -1,9 +1,64 @@
-body{
+body {
     font-family: Chivo;
     background-color: #F8F8F8;
 }
-
+h1,h2,h3,h4{
+    margin:0;
+    padding:0;
+}
 .navbar-default {
     background-color: white;
     border-color: #e7e7e7;
+}
+
+.box-home {
+    background: lightblue;
+    height: 200px;
+
+
+
+}
+.box-home .content{
+    width:100%;
+    height: 100%;
+    padding: 5%;
+    float:left;
+}
+.box-home .content .box-action {
+    width:100%;
+    background:lightblue;
+    float:left;
+    height:150px;
+}
+.box-home .content h2 {
+    width:100%;
+    background:white;
+    text-align:center;
+    float:left;
+    height:50px;
+}
+.article{
+    float:left;
+    width:100%;
+}
+.main-article{
+    height: 350px;
+}
+.main-article .content{
+    background-size: 100% 350px;
+    background-repeat: no-repeat;
+    height:350px;
+    padding:10px;
+}
+.main-article .content-title{
+}
+.title{
+    float:left;
+    margin-top:15px;
+    margin-bottom: 15px;
+    width:100%;
+}
+.category{
+    float:left;
+    width:100%;
 }
