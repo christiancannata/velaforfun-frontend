@@ -13,20 +13,16 @@
 -->
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    <style>
-        body {
-            padding-top: 125px;
-        }
-    </style>
+
 </head>
 
 <body>
 
 
-<div class="container-fluid">
+<div class="container">
 
 
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-top">
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-md-4 column">
@@ -48,12 +44,13 @@
                     </ul>
                 </div>
                 <div class="col-md-4 column">
-                    <h3>
+                    <div id="logo">
                         VELAFORFUN
-                    </h3>
+                    </div>
+
                 </div>
                 <div class="col-md-4 column">
-                    <ul class="list-inline">
+                    <ul class="list-inline" id="menu-login">
                         <li>Sei già iscritto?</li>
                         <li><a href="#">ACCEDI</a></li>
                         <li><a href="#">REGISTRATI</a></li>
@@ -156,9 +153,10 @@
             </div>
             <div class="article main-article">
 
-                <div class="content" style="background-image: url(http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_13.jpg)">
+                <div class="content"
+                     style="background-image: url(http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_13.jpg)">
                     <div class="category">
-                       <a href="#"><span>CATEGORY</span> <span>+</span></a>
+                        <a href="#"><span>CATEGORY</span> <span>+</span></a>
                     </div>
                     <div class="content-title">
                         <h3>Titolo</h3>
@@ -182,7 +180,9 @@
                 <div class="latest-news">
                     <div class="content">
                         <h4>Titolo 1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad- ipiscing elit, sed do eiusmod tempor incidi- dunt ut labore et dolore ...</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur ad- ipiscing elit, sed do eiusmod tempor incidi- dunt
+                            ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
 
@@ -191,7 +191,9 @@
                 <div class="latest-news">
                     <div class="content">
                         <h4>Titolo 1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad- ipiscing elit, sed do eiusmod tempor incidi- dunt ut labore et dolore ...</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur ad- ipiscing elit, sed do eiusmod tempor incidi- dunt
+                            ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
 
@@ -200,34 +202,98 @@
                 <div class="latest-news">
                     <div class="content">
                         <h4>Titolo 1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad- ipiscing elit, sed do eiusmod tempor incidi- dunt ut labore et dolore ...</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur ad- ipiscing elit, sed do eiusmod tempor incidi- dunt
+                            ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
 
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <div class="row clearfix">
-        <div class="col-md-8 column">
-            <h3>
-                h3. Lorem ipsum dolor sit amet.
-            </h3>
-        </div>
-        <div class="col-md-4 column">
-            <h3>
-                h3. Lorem ipsum dolor sit amet.
-            </h3>
-        </div>
-    </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <h3 class="text-center">
-                h3. Lorem ipsum dolor sit amet.
-            </h3>
+            <div class="divisore"></div>
+        </div>
+    </div>
+
+
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <div class="box-sub">
+                <div class="foto">
+                    <img style="width:100%" src="http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_23.jpg">
+                    <div class="category">
+                        <a href="#"><span>CATEGORY</span> <span>+</span></a>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adip- iscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+        </div>
+        <div class="col-md-4 column">
+            <div class="box-sub">
+                <div class="foto">
+                    <img style="width:100%" src="http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_23.jpg">
+                    <div class="category">
+                        <a href="#"><span>CATEGORY</span> <span>+</span></a>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adip- iscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+        </div>
+        <div class="col-md-4 column">
+            <div class="box-sub">
+                <div class="foto">
+                    <img style="width:100%" src="http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_23.jpg">
+                    <div class="category">
+                        <a href="#"><span>CATEGORY</span> <span>+</span></a>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adip- iscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <div class="box-grande">
+
+            </div>
+        </div>
+        <div class="col-md-6 column">
+            <div class="box-footer">
+                Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                qe veritatis et quasi architecto.
+                QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA.
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="divisore"></div>
+        </div>
+    </div>
+
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="text-center">
+                <div class="logo">
+                    VELAFORFUN
+                </div>
+                <p>Velaforfun, IDI CHE-247.845.224, Via Livio 14 - 6830 Venezia (ITALIA), Tel. 0041 091 690 19 19 - © 2015 Velaforfun</p>
+                <p>Sicurezza dei dati e Privacy | Team editoriale | Linea editoriale | Come contattarci</p>
+            </div>
         </div>
     </div>
 </div>
