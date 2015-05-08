@@ -166,5 +166,20 @@ h1, h2, h3, h4 {
 .over-box {
     height: 100px;
     display: none;
+}
+
+.contenuto-articolo h1{
+    font-size:20px;
+    color:lightskyblue;
+}
+.contenuto-articolo h2{
+    font-size:12px;
+    font-weight: normal;
+    color:grey;
+}
+.contenuto-articolo p{
+    font-size:12px;
+    color:grey;
     background: white;
+
 }
