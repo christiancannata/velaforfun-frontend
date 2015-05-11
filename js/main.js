@@ -35,38 +35,5 @@ jQuery(document).ready(function ($) {
     });
 
 
-    var loadBox = false;
-  /*  $(".box-home").mouseover(function () {
-
-            loadBox = true;
-            var overBox = $(this).find(".over-box");
-            var title = $(this).find("h2");
-            if (overBox.css('display') == "none") {
-                loadBox = true;
-                overBox.slideToggle({
-                    direction: "up"
-                }, 100);
-                title.animate({
-                    'marginTop': '0px'
-                }, 300);
-
-
-            }
-
-
-    });
-
-    $(".over-box").mouseout(function () {
-        var title = $(this).parent().find("h2");
-
-        if ($(this).css('display') == "block") {
-            title.animate({
-                'marginTop': '100px'
-            }, 300);
-            $(this).slideToggle();
-
-        }
-        loadBox = false;
-    }); */
 
 });
