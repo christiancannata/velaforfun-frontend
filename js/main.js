@@ -1,11 +1,9 @@
-
-
 jQuery(document).ready(function ($) {
 
     WebFontConfig = {
-        google: { families: [ 'Chivo:400,400italic,900:latin' ] }
+        google: {families: ['Chivo:400,400italic,900:latin']}
     };
-    (function() {
+    (function () {
         var wf = document.createElement('script');
         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
             '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
@@ -16,9 +14,8 @@ jQuery(document).ready(function ($) {
     })();
 
 
-
     $(".delete-entity").click(function () {
-        var button=$(this);
+        var button = $(this);
         $("button").attr("disabled", "disabled");
         $.ajax({
             type: "POST",
@@ -38,41 +35,38 @@ jQuery(document).ready(function ($) {
     });
 
 
-    var loadBox=false;
-    $(".box-home").mouseover(function(){
-        if(loadBox==true){
-            $(".over-box").parent().find("h2").animate({
-                'marginTop': '100px'
-            }, 300);
-            $(".over-box").slideToggle();
-            loadBox=false;
-        }
-        var overBox=$(this).find(".over-box");
-        var title=$(this).find("h2");
-        if(overBox.css('display')=="none"){
-            loadBox=true;
-            overBox.slideToggle({
-                direction: "up"
-            }, 100);
-            title.animate({
-                'marginTop': '0px'
-            }, 300);
+    var loadBox = false;
+  /*  $(".box-home").mouseover(function () {
+
+            loadBox = true;
+            var overBox = $(this).find(".over-box");
+            var title = $(this).find("h2");
+            if (overBox.css('display') == "none") {
+                loadBox = true;
+                overBox.slideToggle({
+                    direction: "up"
+                }, 100);
+                title.animate({
+                    'marginTop': '0px'
+                }, 300);
 
 
-        }
+            }
+
+
     });
 
-    $(".over-box").mouseout(function(){
-        var title=$(this).parent().find("h2");
+    $(".over-box").mouseout(function () {
+        var title = $(this).parent().find("h2");
 
-        if($(this).css('display')=="block"){
+        if ($(this).css('display') == "block") {
             title.animate({
                 'marginTop': '100px'
             }, 300);
             $(this).slideToggle();
+
         }
-
-
-    });
+        loadBox = false;
+    }); */
 
 });
