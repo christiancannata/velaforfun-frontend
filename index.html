@@ -32,11 +32,18 @@
                                aria-expanded="false"> <i class="fa fa-bars fa-lg"></i> Tutte le sezioni</a>
                             <ul class="dropdown-menu" role="menu">
 
-                                <li><a href="#">Action</a></li>
+                                <li><a class="bordered blue" href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Porto</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </form></li>
                                 <li class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
@@ -44,10 +51,30 @@
                     </ul>
                 </div>
                 <div class="col-md-4 column">
-                    <div id="logo">
-                        VELAFORFUN
-                    </div>
 
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div id="logo">
+                                <div  class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            VELAFORFUN
+                                        </div>
+                                        <div class="back">
+                                            back
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-inline" id="sub-menu">
+                                <li><a href="#">Link 1</a></li>
+                                <li><a href="#">Link 2</a></li>
+                                <li><a href="#">Link 3</a></li>
+                                <li><a href="#">Link 4</a></li>
+                                <li><a href="#">Link 5</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4 column">
                     <ul class="list-inline" id="menu-login">
@@ -58,15 +85,7 @@
                 </div>
             </div>
 
-            <div class="row clearfix">
-                <div class="col-md-12 column">
-                    <ul class="list-inline" id="sub-menu">
-                        <li>Sei già iscritto?</li>
-                        <li><a href="#">ACCEDI</a></li>
-                        <li><a href="#">REGISTRATI</a></li>
-                    </ul>
-                </div>
-            </div>
+
 
 
         </div>
@@ -210,8 +229,8 @@
 
                 <div class="content"
                      style="background-image: url(http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_13.jpg)">
-                    <div class="category">
-                        <a href="#"><span>CATEGORY</span> <span>+</span></a>
+                    <div class="category ">
+                        <a href="#" ><span class="hvr-glow">CATEGORY</span> <span class="hvr-glow">+</span></a>
                     </div>
                     <div class="content-title">
                         <h3>Titolo</h3>
@@ -240,8 +259,7 @@
                             ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
-
-                    </div>
+                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>                                  </div>
                 </div>
                 <div class="latest-news">
                     <div class="content">
@@ -251,8 +269,7 @@
                             ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
-
-                    </div>
+                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>                                  </div>
                 </div>
                 <div class="latest-news">
                     <div class="content">
@@ -262,8 +279,7 @@
                             ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
-
-                    </div>
+                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>                                  </div>
                 </div>
             </div>
         </div>
@@ -366,6 +382,7 @@
 
 
 <script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script language="javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 

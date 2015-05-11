@@ -2,6 +2,7 @@ body {
     font-family: Chivo;
     background-color: #F8F8F8;
     padding-top: 70px;
+    color:rgb(153,153,153);
 }
 
 h1, h2, h3, h4 {
@@ -9,9 +10,35 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
+.celeste{
+    color:rgb(66,156,188);
+}
+
+.rosso{
+    color:rgb(242,20,35);
+}
+
+.verde{
+    color:rgb(7,169,157);
+}
+
+.blu{
+    color:rgb(42,66,125);
+}
+
+.arancione{
+    color:rgb(247,147,29);
+}
+
+.grigio{
+    color:rgb(153,153,153);
+}
+
 .navbar-default {
     background-color: white;
     border-color: #e7e7e7;
+
+
 }
 
 .box-home {
@@ -46,7 +73,7 @@ h1, h2, h3, h4 {
     float: left;
     text-align: center;
     width: 100%;
-    margin-top:100px;
+    margin-top: 100px;
 }
 
 .article {
@@ -82,6 +109,15 @@ h1, h2, h3, h4 {
     color: white;
     background: darkcyan;
     padding: 7px;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -ms-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+}
+
+.category:hover span {
+    background: cyan;
 }
 
 .content-title {
@@ -108,8 +144,20 @@ h1, h2, h3, h4 {
     border: 1px solid grey;
     float: left;
     width: 100%;
-}
+    border-right:none;
+    background:white;
+    cursor:pointer;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -ms-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
 
+}
+.latest-news:hover{
+    background: lightblue;
+
+}
 .latest-news .content {
     float: left;
     width: 80%;
@@ -118,6 +166,16 @@ h1, h2, h3, h4 {
 .latest-news .arrow {
     float: left;
     width: 20%;
+    text-align: center;
+    position: relative;
+    height: 10em;
+}
+
+.arrow img {
+width:50%;
+    position: absolute;               /* 2 */
+    top: 50%;                         /* 3 */
+    transform: translate(0, -50%)
 }
 
 .foto .category {
@@ -126,9 +184,13 @@ h1, h2, h3, h4 {
     top: 15px;
     width: auto;
 }
-.box-sub{
-    cursor:pointer;
+
+.box-sub {
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 5px;
 }
+
 .box-sub p {
     padding-top: 20px;
 
@@ -150,13 +212,46 @@ h1, h2, h3, h4 {
 #logo {
     text-align: center;
     height: 100%;
+    font-size: 40px;
+    -webkit-transition-duration: 0.8s;
+
+    -moz-transition-duration: 0.8s;
+
+    -o-transition-duration: 0.8s;
+
+    transition-duration: 0.8s;
+
+    -webkit-transition-property: -webkit-transform;
+
+    -moz-transition-property: -moz-transform;
+
+    -o-transition-property: -o-transform;
+
+    transition-property: transform;
+
+    overflow: hidden;
+
+    color:rgb(66,156,188);
+
+}
+
+.rotate {
+
+    -webkit-transform: rotate(
+            360deg);
+
+    -moz-transform: rotate(
+            360deg);
+
+    -o-transform: rotate(
+            360deg);
 }
 
 #menu-login {
     height: 100%;
 }
 
-#nav-top {
+.shadow-menu {
     -webkit-box-shadow: 0px 2px 5px -1px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: 0px 2px 5px -1px rgba(50, 50, 50, 0.75);
     box-shadow: 0px 2px 5px -1px rgba(50, 50, 50, 0.75);
@@ -170,34 +265,37 @@ h1, h2, h3, h4 {
     height: 100px;
 }
 
-.contenuto-articolo h1{
-    font-size:20px;
-    color:lightskyblue;
+.contenuto-articolo h1 {
+    font-size: 20px;
+    color: lightskyblue;
 }
-.contenuto-articolo h2{
-    font-size:12px;
+
+.contenuto-articolo h2 {
+    font-size: 12px;
     font-weight: normal;
-    color:grey;
+    color: grey;
 }
-.contenuto-articolo p{
-    font-size:12px;
-    color:grey;
+
+.contenuto-articolo p {
+    font-size: 12px;
+    color: grey;
     background: white;
 
 }
-#sub-menu{
-    text-align:center;
-    display:none
+
+#sub-menu {
+    text-align: center;
+    display: none;
 }
 
-
 .arrow_box {
-    float:left;
-    width:100%;
+    float: left;
+    width: 100%;
     position: relative;
     background: #88b7d5;
     border: 4px solid #none;
 }
+
 .arrow_box:after, .arrow_box:before {
     right: 100%;
     top: 50%;
@@ -215,44 +313,125 @@ h1, h2, h3, h4 {
     border-width: 20px;
     margin-top: -20px;
 }
+
 .arrow_box:before {
     border-color: rgba(0, 0, 0, 0);
     border-right-color: #none;
     border-width: 36px;
     margin-top: -36px;
 }
-.contenuto-articolo .category,.contenuto-articolo .social{
-    float:left;
-    width:50%;
+
+.contenuto-articolo .category, .contenuto-articolo .social {
+    float: left;
+    width: 50%;
 }
-.contenuto-articolo .social{
-    text-align:right;
+
+.contenuto-articolo .social {
+    text-align: right;
 
 }
-.contenuto-articolo .social .fa{
+
+.contenuto-articolo .social .fa {
     font-size: 24px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.box-home h2{
-    margin-top:100px;
+.box-home h2 {
+    margin-top: 100px;
     -webkit-transition: margin-top 0.5s; /* Safari 3.1 to 6.0 */
     transition: margin-top 0.5s;
+    color:rgb(66,156,188);
+
+
 }
 
-.box-home:hover h2{
-    margin-top:0px;
+.box-home:hover h2 {
+    margin-top: 0px;
     -webkit-transition: margin-top 0.5s; /* Safari 3.1 to 6.0 */
     transition: margin-top 0.5s;
+    color:white;
+    background:rgb(66,156,188);
+}
 
-}
-.box-home .over-box{
-    display:none;
+.box-home .over-box {
+    display: none;
     opacity: 1;
     transition: opacity 2s linear;
+    float:left;
+    width:100%;
 }
-.box-home:hover .over-box{
-    display:block;
+
+.box-home:hover .over-box {
+    display: block;
     opacity: 1;
     transition: opacity 2s linear;
+    background:rgb(66,156,188);
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+    perspective: 1000;
+}
+
+/* flip the pane when hovered */
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    height: 50px;
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+    font-size: 10px;
+    height: 30px;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 400px
+}
+.dropdown-menu li a.bordered{
+    border-left:solid 5px red;
+    margin-left: 8px;
+    padding-left: 7px;
+}
+.dropdown-menu li a.bordered.blue{
+    border-color: cyan;
+}
+
+.navbar-default .navbar-nav > li > a,#menu-login{
+    color:rgb(66,156,188);
 }
