@@ -145,6 +145,7 @@ h1, h2, h3, h4 {
 
 .latest-news {
     padding: 15px;
+    list-style:none;
     border-top: 1px solid rgb(153,153,153);
     float: left;
     width: 100%;
@@ -157,6 +158,11 @@ h1, h2, h3, h4 {
     -o-transition: background 0.2s ease-in-out;
     transition: background 0.2s ease-in-out;
 
+}
+ul.content{
+    width:100%;
+    float:left;
+    padding:0;
 }
 .latest-news p{
     margin-top:10px;
@@ -281,8 +287,12 @@ width:50%;
 }
 
 .contenuto-articolo h1 {
-    font-size: 20px;
-    color: lightskyblue;
+    font-size: 30px;
+    color:rgb(66,156,188);
+    padding-bottom:10px;
+    padding-top:20px;
+    float:left;
+    width:100%;
 }
 
 .contenuto-articolo h2 {
@@ -343,13 +353,34 @@ background:rgb(66,156,188);
 .contenuto-articolo .category, .contenuto-articolo .social {
     float: left;
     width: 50%;
-}
+    color:rgb(66,156,188);
 
+}
+.contenuto-articolo .category, .contenuto-articolo .social i:hover{
+    color:rgb(153,153,153);
+}
 .contenuto-articolo .social {
     text-align: right;
 
 }
-
+.contenuto-articolo h2{
+    float: left;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 28px;
+    width: 100%;
+}
+.contenuto-articolo .divisore{
+    background:rgb(153,153,153);
+    margin-top:15px;
+    margin-bottom:15px;
+    height:1px;
+}
+.contenuto-articolo p{
+    float:left;
+    width:100%;
+    padding:10px;
+}
 .contenuto-articolo .social .fa {
     font-size: 24px;
     cursor: pointer;
