@@ -36,14 +36,17 @@
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
-                                <li><form>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Porto</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
+                                <li>
+                                    <form method="GET" >
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Porto</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                   placeholder="Enter email">
+                                        </div>
 
-                                    <button type="submit" class="btn btn-default">Submit</button>
-                                </form></li>
+                                        <button type="submit" class="btn btn-default">Cerca</button>
+                                    </form>
+                                </li>
                                 <li class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
@@ -55,7 +58,7 @@
                     <div class="row clearfix">
                         <div class="col-md-12 column">
                             <div id="logo">
-                                <div  class="flip-container">
+                                <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
                                             VELAFORFUN
@@ -86,8 +89,6 @@
             </div>
 
 
-
-
         </div>
         <!-- /.container-fluid -->
     </nav>
@@ -98,18 +99,18 @@
             <div class="box-home">
                 <div class="content">
                     <div class="box-action">
-                        <h2>Titolo
-
+                        <h2>I PORTI ITALIANI
                         </h2>
 
                         <div class="over-box">
-                            <form>
+                            <form method="GET" action="/porti/{permalink}" name="cerca_porti">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Porto</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                    <label for="selectPorto">Cerca il tuo porto</label>
+                                    <input autocomplete="off" type="text" class="form-control" id="selectPorto"
+                                           placeholder="Inserisci il nome del porto...">
                                 </div>
 
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="submit" class="btn btn-default">cerca</button>
                             </form>
                         </div>
 
@@ -230,10 +231,10 @@
                 <div class="content"
                      style="background-image: url(http://www.superedo.it/sfondi/sfondi/Trasporti/Barche%20A%20Vela/barche_a_vela_13.jpg)">
                     <div class="category ">
-                        <a href="#" ><span class="hvr-glow">CATEGORY</span> <span class="hvr-glow">+</span></a>
+                        <a href="#"><span class="hvr-glow">CATEGORY</span> <span class="hvr-glow">+</span></a>
                     </div>
                     <div class="content-title">
-                        <h3>Titolo</h3>
+                        <h3>SCHOONER 15m wood. Sogno per pochi.</h3>
 
                         <div class="divisore"></div>
                         <div class="subtitle">
@@ -259,7 +260,8 @@
                             ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
-                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>                                  </div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>
+                    </div>
                 </div>
                 <div class="latest-news">
                     <div class="content">
@@ -269,7 +271,8 @@
                             ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
-                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>                                  </div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>
+                    </div>
                 </div>
                 <div class="latest-news">
                     <div class="content">
@@ -279,7 +282,8 @@
                             ut labore et dolore ...</p>
                     </div>
                     <div class="arrow">
-                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>                                  </div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAuUAAALlAF37bb0AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAFRwjI/7tlGD8gAAAWpJREFUeNrt3btNRDEURdGHeC2QU8sELoECHLj/EghAiM8MIsFboHULsI6WC9jH8bO7HO2d67EdMNaMAVZLMNZKCc61WoKxVkrwAhASjNcBMwbICMbbgBkDRATj3YAZAyQE48OAGQMEBOPTgBkDbCcYXwbMGGAzwbgyYMYAWwnG1QEzBthIMG4MmDHANoJxc8CMATYRjG8G7CC4X6sluHtaMcEDAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgADBXyOoB+RfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4fwB5RCPPiPQhlTwl08d08pxQH1TKk1J9VCvPivVhtTwt18f18rxgH1jME5N9ZDPPjPah1Tw128d289xwH1zOk9N9dDvPjvfh9Tw9f5wxwHFcfuvhZ5cDc/WzWH4pAAAAAElFTkSuQmCC761b5e6eeee3348049e0e9f99aef97ab"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -385,7 +389,7 @@
 <script language="javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+<script src="./js/bootstrap3-typeahead.min.js"></script>
 <script src="./js/main.js"></script>
 <!--
 <script src="{{ asset('bundles/app/js/form.js') }}"></script>
@@ -402,6 +406,14 @@
             '[ name="{{ form.vars.full_name }}"]'
         ];
 
+
+        $.get('/json/portiItaliani.json', function (data) {
+            $("#selectPorto").typeahead({source: data});
+        }, 'json');
+//example_collection.json
+// ["item1","item2","item3"]
+
+
         $(forms.join(',')).submit(function (e) {
             e.preventDefault();
             var form = $(this)
@@ -416,6 +428,23 @@
             });
 
             return false;
+        });
+
+
+
+
+        $("form").submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            var url=form.attr("action");
+            if (url.indexOf("{permalink}") >= 0){
+                url=url.replace('{permalink}',$("#selectPorto").typeahead("getActive").permalink);
+            }
+            alert(url);
+            if(form.attr("method")=="GET"){
+                location.href=url;
+            }
+
         });
 
     });
