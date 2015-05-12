@@ -136,12 +136,58 @@
 </div>
 
 
+<div class="modal fade" id="modalPortolano">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Nuova segnalazione del Portolano</h4>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Titolo:</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1"
+                               placeholder="Inserisci il titolo della segnalazione">
+                    </div>
+                    <div class="form-group">
+                        <label for="descrizione">Descrizione:</label>
+                        <textarea id="descrizione" name="descrizione" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="descrizione">Coordinate della segnalazione:</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="coordinate-x">Lat.</span>
+                            <input type="text" class="form-control" placeholder="Inserisci la coordinata" id="latitudine"  aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="coordinate-y">Long.</span>
+                            <input type="text" class="form-control"placeholder="Inserisci la coordinata" id="longitudine" aria-describedby="basic-addon1">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-primary">Inserisci</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
 <script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 
 <script src="./js/main.js"></script>
+<script src="./js/maps.js"></script>
 <!--
 <script src="{{ asset('bundles/app/js/form.js') }}"></script>
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
@@ -150,100 +196,6 @@
  <script>tinymce.init({selector:'textarea',plugins: "textcolor",toolbar: "undo redo | styleselect | bold italic | link image | forecolor backcolor"});</script>
 
  -->
-<script language="javascript">
-
-    $(document).ready(function () {
-
-
-
-        // Provide your access token
-        L.mapbox.accessToken = 'pk.eyJ1IjoiY2hyaXN0aWFuMTQ4OCIsImEiOiJZaldjZlM0In0.hXiRMyyCDLdQZUrqXF2eNw';
-        // Create a map in the div #map
-        var map = L.mapbox.map('map', 'examples.map-zr0njcqy');
-        var myLayer = L.mapbox.featureLayer().addTo(map);
-        var markerList = document.getElementById('marker-list');
-        map.on('click', function (e) {
-            L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-        });
-
-
-        map.featureLayer.on('ready', function (e) {
-            map.featureLayer.eachLayer(function (layer) {
-                var item = markerList.appendChild(document.createElement('li'));
-                item.innerHTML = layer.toGeoJSON().properties.title;
-                item.onclick = function () {
-                    map.setView(layer.getLatLng(), 14);
-                    layer.openPopup();
-                };
-            });
-        });
-
-// This uses the HTML5 geolocation API, which is available on
-// most mobile browsers and modern browsers, but not in Internet Explorer
-//
-// See this chart of compatibility for details:
-// http://caniuse.com/#feat=geolocation
-        if (!navigator.geolocation) {
-            geolocate.innerHTML = 'Geolocation is not available';
-        } else {
-            geolocate.onclick = function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                map.locate();
-            };
-        }
-
-// Once we've got a position, zoom and center the map
-// on it, and add a single marker.
-        map.on('locationfound', function (e) {
-            map.fitBounds(e.bounds);
-
-            myLayer.setGeoJSON({
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: [e.latlng.lng, e.latlng.lat]
-                },
-                properties: {
-                    'title': 'Here I am!',
-                    'marker-color': '#ff8888',
-                    'marker-symbol': 'star'
-                }
-            });
-
-            // And hide the geolocation button
-            geolocate.parentNode.removeChild(geolocate);
-        });
-
-// If the user chooses not to allow their location
-// to be shared, display an error message.
-        map.on('locationerror', function () {
-            geolocate.innerHTML = 'Position could not be found';
-        });
-
-
-        var forms = [
-            '[ name="{{ form.vars.full_name }}"]'
-        ];
-
-        $(forms.join(',')).submit(function (e) {
-            e.preventDefault();
-            var form = $(this)
-            form.find('input[type="submit"],button').attr('disabled', 'disabled');
-            postForm($(this), function (response) {
-                if (response.success == true) {
-                    showalert(form, "Creato con successo!", "success")
-                } else {
-                    showalert(form, "Errore nella creazione", "error")
-                }
-                form.find('input[type="submit"],button').removeAttr('disabled');
-            });
-
-            return false;
-        });
-
-    });
-</script>
 
 </body>
 </html>
