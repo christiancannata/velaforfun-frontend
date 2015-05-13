@@ -8,19 +8,59 @@ $(document).ready(function () {
     // Provide your access token
     L.mapbox.accessToken = 'pk.eyJ1IjoiY2hyaXN0aWFuMTQ4OCIsImEiOiJZaldjZlM0In0.hXiRMyyCDLdQZUrqXF2eNw';
     // Create a map in the div #map
-    var map = L.mapbox.map('map', 'examples.map-zr0njcqy');
-    var myLayer = L.mapbox.featureLayer().addTo(map);
+    var map = L.mapbox.map('map', 'mapbox.streets');
+    var myLayer = L.mapbox.featureLayer()
+        .loadURL('/json/markers.geojson')
+        .addTo(map);
     var markerList = document.getElementById('marker-list');
     map.on('click', function (e) {
-        $("#latitudine").val(e.latlng.lat);
-        $("#longitudine").val(e.latlng.lng);
+       // $("#latitudine").val(e.latlng.lat);
+      //  $("#longitudine").val(e.latlng.lng);
+        $("#loading-porto").show();
+        $(".porto-title").css("opacity","0.5");
+        $(".porto-content").css("opacity","0.5");
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather?lat="+e.latlng.lat+"&lon="+e.latlng.lng,
+            url: "http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + e.latlng.lat + "&lon=" + e.latlng.lng,
             dataType: "json",
-            success: function(response){
+            success: function (location) {
 
-                console.log(response);
+                $("#porto-nome").html(location.name);
+
+                $(".porto-temperatura").html(location.main.temp+"°");
+                $(".porto-temperatura-min").html(location.main.temp_min+"°");
+                $(".porto-temperatura-max").html(location.main.temp_max+"°");
+                console.log(location);
+                $("#loading-porto").hide();
+                $(".porto-title").css("opacity","1");
+                $(".porto-content").css("opacity","1");
+            }
+        });
+
+    });
+
+    myLayer.on('click', function (e) {
+        var marker = e.layer;
+        feature = marker.feature;
+        var id = feature.properties.id;
+
+        $.ajax({
+            url: "/porti/" + id + ".json",
+            dataType: "json",
+            success: function (response) {
+
+
+                //SET CONTENUTO DEL PORTO
+
+                $.ajax({
+                    url: "porti/" + id + "/meteo.json",
+                    dataType: "json",
+                    success: function (response) {
+
+                        console.log(response);
+                    }
+                });
+
             }
         });
 
@@ -28,6 +68,8 @@ $(document).ready(function () {
 
 
     map.featureLayer.on('ready', function (e) {
+
+
         map.featureLayer.eachLayer(function (layer) {
             var item = markerList.appendChild(document.createElement('li'));
             item.innerHTML = layer.toGeoJSON().properties.title;
