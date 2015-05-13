@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Velaforfun</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet'/>
+    <!-- Optional theme
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+-->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-top">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false"> <i class="fa fa-bars fa-lg"></i> Tutte le sezioni</a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 column">
+                    <div id="logo">
+                        VELAFORFUN
+                    </div>
+
+                </div>
+                <div class="col-md-4 column">
+                    <ul class="list-inline" id="menu-login">
+                        <li>Sei già iscritto?</li>
+                        <li><a href="#">ACCEDI</a></li>
+                        <li><a href="#">REGISTRATI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- contenuto -->
+
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+
+            <h1>I Porti Italiani</h1>
+
+            <div id='map'></div>
+
+
+        </div>
+        <div class="col-md-4 column">
+            <div class="title">
+                Last News
+            </div>
+            <div class="content">
+                <a href='#' id='geolocate' class='ui-button'>Find me</a>
+                <ul id='marker-list'></ul>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- fine contenuto -->
+
+
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <div class="box-grande">
+
+            </div>
+        </div>
+        <div class="col-md-6 column">
+            <div class="box-footer">
+                Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa
+                qe veritatis et quasi architecto.
+                QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA.
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="divisore"></div>
+        </div>
+    </div>
+
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="text-center">
+                <div class="logo">
+                    VELAFORFUN
+                </div>
+                <p>Velaforfun, IDI CHE-247.845.224, Via Livio 14 - 6830 Venezia (ITALIA), Tel. 0041 091 690 19 19 - ©
+                    2015 Velaforfun</p>
+
+                <p>Sicurezza dei dati e Privacy | Team editoriale | Linea editoriale | Come contattarci</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+
+<script src="./js/main.js"></script>
+<script src="./js/maps.js"></script>
+<!--
+<script src="{{ asset('bundles/app/js/form.js') }}"></script>
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+ <script>tinymce.init({selector:'textarea',plugins: "textcolor",toolbar: "undo redo | styleselect | bold italic | link image | forecolor backcolor"});</script>
+
+ -->
+
+</body>
+</html>

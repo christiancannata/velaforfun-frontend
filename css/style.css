@@ -242,6 +242,47 @@ ul.content {
 
 }
 
+.box-footer .social a i {
+    font-size: 50px;
+    color: white;
+    padding-top:20px;
+    padding-bottom:20px;
+    width:100%;
+}
+
+.box-footer .social a {
+    text-decoration: none;
+    background: rgb(66, 156, 188);
+    float: left;
+    text-align:center;
+    width:20%;
+
+}
+
+.box-footer .fa-facebook {
+    background: rgb(0, 133, 188);
+}
+
+.box-footer .fa-twitter {
+    background: rgb(66, 207, 225);
+}
+
+.box-footer .fa-envelope-o {
+    background: rgb(247, 147, 29);
+}
+
+.box-footer .fa-google-plus {
+    background: rgb(249, 83, 70);
+}
+
+.box-footer .social a:hover{
+    color: white;
+}
+
+h2 {
+    color: rgb(66, 156, 188);
+}
+
 #logo {
     text-align: center;
     height: 100%;
@@ -295,7 +336,7 @@ ul.content {
 }
 
 .dropdown-menu {
-    background: rgb(196, 233, 233);
+    background: rgb(198, 225, 235);
 }
 
 .over-box {
@@ -405,6 +446,14 @@ ul.content {
     height: 1px;
 }
 
+.divisore-big {
+    background: rgb(153, 153, 153);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 1px;
+    padding: 0;
+}
+
 .contenuto-articolo p {
     float: left;
     width: 100%;
@@ -418,8 +467,8 @@ ul.content {
 
 .box-home h2 {
     margin-top: 100px;
-  /*  -webkit-transition: margin-top 0.1s;
-    transition: margin-top 0.1s;*/
+    /*  -webkit-transition: margin-top 0.1s;
+      transition: margin-top 0.1s;*/
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -429,11 +478,11 @@ ul.content {
 
 .box-home:hover h2 {
     margin-top: 0px;
-  /*  -webkit-transition: margin-top 0.4s;
-    -moz-transition: margin-top 0.4s;
-    -ms-transition: margin-top 0.4s;
-    -o-transition: margin-top 0.4s;
-    transition: margin-top 0.4s; */
+    /*  -webkit-transition: margin-top 0.4s;
+      -moz-transition: margin-top 0.4s;
+      -ms-transition: margin-top 0.4s;
+      -o-transition: margin-top 0.4s;
+      transition: margin-top 0.4s; */
     color: rgb(255, 255, 255);
 
     background: rgba(66, 156, 188, 0.8);
@@ -548,4 +597,16 @@ ul.content {
     right: 0;
     width: 100%;
     z-index: -1;
+}
+
+.dropdown-menu > li > a {
+    color: rgb(66, 156, 188);
+}
+
+.dropdown-menu .divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 5px;
+    background: rgb(66, 156, 188);
+    width: 100%;
 }
