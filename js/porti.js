@@ -27,9 +27,7 @@ $(document).ready(function () {
 
                 $("#porto-nome").html(location.name);
 
-                $(".porto-temperatura").html(location.main.temp+"°");
-                $(".porto-temperatura-min").html(location.main.temp_min+"°");
-                $(".porto-temperatura-max").html(location.main.temp_max+"°");
+                $("#porto-temperatura").html(location.main.temp+"°");
                 console.log(location);
                 $("#loading-porto").hide();
                 $(".porto-title").css("opacity","1");

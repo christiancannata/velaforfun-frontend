@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $(".flip-container").addClass("hover");
-            $(".front,.flip-container").css("height", "30px");
+            $(".front,.flip-container").css("height", "50px");
             $("#nav-top").addClass("shadow-menu");
             $('#sub-menu').fadeIn(500);
         } else {

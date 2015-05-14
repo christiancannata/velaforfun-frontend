@@ -16,34 +16,6 @@ form label {
 
 }
 
-.celeste {
-    color: rgb(66, 156, 188);
-}
-
-.rosso {
-    color: rgb(242, 20, 35);
-}
-
-.celeste-chiaro {
-    color: rgb(196, 233, 233);
-}
-
-.verde {
-    color: rgb(7, 169, 157);
-}
-
-.blu {
-    color: rgb(42, 66, 125);
-}
-
-.arancione {
-    color: rgb(247, 147, 29);
-}
-
-.grigio {
-    color: rgb(153, 153, 153);
-}
-
 .navbar-default {
     background-color: white;
     border-color: #e7e7e7;
@@ -89,13 +61,13 @@ form label {
 }
 
 .main-article {
-    height: 350px;
+    height: 428px;
 }
 
 .main-article .content {
-    background-size: 100% 350px;
+    background-size: 100% 428px;
     background-repeat: no-repeat;
-    height: 350px;
+    height: 428px;
     padding: 10px;
 }
 
@@ -114,21 +86,21 @@ form label {
 
 .category a span {
     color: white;
-    background: darkcyan;
     padding: 7px;
-    -webkit-transition: background 0.2s ease-in-out;
-    -moz-transition: background 0.2s ease-in-out;
-    -ms-transition: background 0.2s ease-in-out;
-    -o-transition: background 0.2s ease-in-out;
-    transition: background 0.2s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -ms-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 }
 
 .category:hover span {
-    background: cyan;
+    opacity: 0.8;
+
 }
 
 .content-title {
-    margin-top: 200px;
+    margin-top: 270px;
     background: rgba(66, 156, 188, 0.8);
     padding: 8px;
     color: white;
@@ -232,7 +204,8 @@ ul.content {
 .box-grande {
     float: left;
     width: 100%;
-    background: lightpink;
+    background: rgb(242, 242, 242) none repeat scroll 0 0;
+    height:300px;
     padding: 10px;
 }
 
@@ -245,17 +218,23 @@ ul.content {
 .box-footer .social a i {
     font-size: 50px;
     color: white;
-    padding-top:20px;
-    padding-bottom:20px;
-    width:100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
 }
-
+.social .column{
+    padding:0;
+}
+.social{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .box-footer .social a {
     text-decoration: none;
     background: rgb(66, 156, 188);
     float: left;
-    text-align:center;
-    width:20%;
+    text-align: center;
+    width: 50%;
 
 }
 
@@ -275,11 +254,36 @@ ul.content {
     background: rgb(249, 83, 70);
 }
 
-.box-footer .social a:hover{
+.box-footer .social a:hover {
     color: white;
 }
 
 h2 {
+    color: rgb(66, 156, 188);
+}
+
+a {
+    color: rgb(66, 156, 188);
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+#menu-login a {
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    font-size: 1vw;
+}
+#menu-login span{
+    font-size: 1.2vw;
+}
+a:hover, #menu-login a:hover, #menu-login a:active {
+    text-decoration: none;
     color: rgb(66, 156, 188);
 }
 
@@ -323,6 +327,7 @@ h2 {
 
 #menu-login {
     height: 50px;
+    float: right;
     margin-bottom: 0;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -523,7 +528,6 @@ h2 {
 .flip-container, .front, .back {
     height: 50px;
     width: 100%;
-    cursor: pointer;
 }
 
 /* flip speed goes here */
@@ -554,12 +558,12 @@ h2 {
 /* back, initially hidden pane */
 .back {
     transform: rotateY(180deg);
-    font-size: 10px;
-    height: 30px;
+    font-size: 16px;
+    height: 50px;
 }
 
 #map {
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     width: 100%;
@@ -582,7 +586,7 @@ h2 {
 
 #menu-login a {
     border-left: solid 1px rgb(153, 153, 153);
-    padding-left: 15px;
+    padding-left: 10px;
     color: rgb(153, 153, 153);
 
 }
