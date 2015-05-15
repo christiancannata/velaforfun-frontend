@@ -76,4 +76,11 @@ jQuery(document).ready(function ($) {
 
     }
 
+
+
+
+
+
+
+    $('.scroll-pane').jScrollPane();
 });

@@ -13,22 +13,13 @@
 -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    <style>
-        .search-ui {
-            position: absolute;
-            right: 14px;
-            top: 3px;
-            width: 230px;
-            z-index: 1000;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/scrollPane.css">
 </head>
 
 <body>
 
 
 <div class="container">
-
 
 
     <nav class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
@@ -41,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand" style="padding:0">  <img src="images/logo.png" width="60"></a>
+                <a href="#" class="navbar-brand" style="padding:0"> <img src="images/logo.png" width="60"></a>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="nav navbar-nav">
@@ -115,7 +106,7 @@
                                             VELAFORFUN
                                         </div>
                                         <div class="back">
-                                            <ul class="list-inline" >
+                                            <ul class="list-inline">
                                                 <li><a href="#">Link 1</a></li>
                                                 <li><a href="#">Link 2</a></li>
                                                 <li><a href="#">Link 3</a></li>
@@ -137,7 +128,8 @@
                     <ul class="list-inline" id="menu-login">
                         <li><span>Sei già iscritto?</span></li>
                         <li class="dropdown" id="menuLogin">
-                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin" style="border:none">ACCEDI</a>
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin"
+                               style="border:none">ACCEDI</a>
 
                             <div class="dropdown-menu" style="padding:17px;">
                                 <form method="GET">
@@ -167,13 +159,12 @@
     </nav>
 
 
-
     <!-- contenuto -->
 
     <div class="row clearfix">
         <div class="col-md-8 column">
 
-            <h1>I Porti Italiani</h1>
+            <h1>I Porto d'Italia</h1>
 
             <div id='map' style="margin-top:0px"></div>
             <input autocomplete="off" type="text" class="form-control search-ui" id="selectPorto"
@@ -186,7 +177,6 @@
                 <h1 id="porto-nome"></h1>
 
 
-
             </div>
             <div class="porto-content">
 
@@ -194,22 +184,225 @@
                 <ul id='marker-list'></ul>
                 <div class="box meteo">
                     <h3>Meteo</h3>
+                    <dl class="dl-horizontal">
+                        <dt>Ultima rilevazione:</dt>
+                        <dd>  <div id="porto-rilevazione">2 Maggio 2015</div></dd>
+                        <dt>Temperatura:</dt>
+                        <dd><div id="porto-temperatura"></div></dd>
+                        <dt>Vento</dt>
+                        <dd> <div id="porto-vento"></div></dd>
+                    </dl>
 
-                    <div id="porto-rilevazione"></div>
-                    <div id="porto-icon"></div>
-                    <div id="porto-temperatura"></div>
-                    <div id="porto-temperatura-min"></div>
-                    <div id="porto-temperatura-max"></div>
-                    <div id="porto-vento"></div>
                 </div>
 
                 <div class="box attracco">
                     <h3>Persone attraccate a questo porto</h3>
 
+                    <div class="scroll-pane">
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pippo Pluto</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Gianni Morandi</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img width="50" class="media-object"
+                                             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                             alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pinco pallino</h4>
+                                    Il giorno 10 Aprile 2015 - 10:30
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
 
                 <div class="box commenti">
-                    <h3>Commenti a questo porto</h3>
+                    <h3>Commenti su questo porto</h3>
+                    <div class="scroll-pane">
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img width="50" class="media-object"
+                                         src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                         alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Media heading</h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis.
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img width="50" class="media-object"
+                                         src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                         alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Media heading</h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis.
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img width="50" class="media-object"
+                                         src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                         alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Media heading</h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis.
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img width="50" class="media-object"
+                                         src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                         alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Media heading</h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis.
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img width="50" class="media-object"
+                                         src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDAI83UZB0PDXebgMxyIn6gWTjiH8o0IYCl3qrJQlDgeQh8BRTMw"
+                                         alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Media heading</h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                turpis.
+                            </div>
+                        </li>
+                    </ul>
+                        </div>
                 </div>
 
 
@@ -219,52 +412,80 @@
     </div>
     <!-- fine contenuto -->
 
-
-    <div class="row clearfix">
-        <div class="col-md-6 column">
-            <div class="box-grande">
-
-            </div>
-        </div>
-        <div class="col-md-6 column">
-            <div class="box-footer">
-                Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa
-                qe veritatis et quasi architecto.
-                QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA.
-            </div>
-        </div>
-    </div>
-
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="divisore"></div>
-        </div>
-    </div>
-
-
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="text-center">
-                <div class="logo">
-                    VELAFORFUN
-                </div>
-                <p>Velaforfun, IDI CHE-247.845.224, Via Livio 14 - 6830 Venezia (ITALIA), Tel. 0041 091 690 19 19 - ©
-                    2015 Velaforfun</p>
-
-                <p>Sicurezza dei dati e Privacy | Team editoriale | Linea editoriale | Come contattarci</p>
-            </div>
-        </div>
-    </div>
 </div>
 
+<div class="container-fluid" style="background:white;padding-top:20px">
+    <div class="container">
+
+
+        <div class="row clearfix">
+            <div class="col-md-6 column">
+                <div class="box-grande">
+
+                </div>
+            </div>
+            <div class="col-md-6 column box-footer">
+                <div class="row clearfix ">
+                    <div class="col-md-12 column">
+                        <h2>Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</h2>
+                        rem aperiam, eaque ipsa
+                        qe veritatis et quasi architecto.
+                        QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA.
+                        <div class="divisore-big"></div>
+                    </div>
+                </div>
+
+                <div class="row clearfix social">
+                    <div class="col-md-6 column">
+                        <a href="#" class="hvr-glow"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="hvr-glow"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <div class="col-md-6 column">
+                        <a href="#" class="hvr-glow"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="hvr-glow"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="divisore"></div>
+            </div>
+        </div>
+
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="text-center">
+                    <div class="logo">
+                        VELAFORFUN
+                    </div>
+                    <p>Velaforfun, IDI CHE-247.845.224, Via Livio 14 - 6830 Venezia (ITALIA), Tel. 0041 091 690 19
+                        19 -
+                        ©
+                        2015 Velaforfun</p>
+
+                    <p>Sicurezza dei dati e Privacy | Team editoriale | Linea editoriale | Come contattarci</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
 
 <script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <script src="./js/jQuery.progressTimer.js"></script>
+<script src="http://jscrollpane.kelvinluck.com/script/jquery.mousewheel.js"></script>
+<script src="http://jscrollpane.kelvinluck.com/script/mwheelIntent.js"></script>
+<script src="http://jscrollpane.kelvinluck.com/script/jquery.jscrollpane.min.js"></script>
+
 
 <script src="./js/main.js"></script>
 <script src="./js/porti.js"></script>

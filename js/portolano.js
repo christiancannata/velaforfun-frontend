@@ -5,9 +5,14 @@ $(document).ready(function () {
     // Provide your access token
     L.mapbox.accessToken = 'pk.eyJ1IjoiY2hyaXN0aWFuMTQ4OCIsImEiOiJZaldjZlM0In0.hXiRMyyCDLdQZUrqXF2eNw';
     // Create a map in the div #map
-    var map = L.mapbox.map('map', 'examples.map-zr0njcqy');
-    var myLayer = L.mapbox.featureLayer().addTo(map);
+    var map = L.mapbox.map('map', 'mapbox.streets');
+    var myLayer = L.mapbox.featureLayer()
+        .loadURL('/json/markers.geojson')
+        .addTo(map);
+
     var markerList = document.getElementById('marker-list');
+
+
     map.on('click', function (e) {
         var marker = L.marker([e.latlng.lat, e.latlng.lng]);
         $("#latitudine").val(e.latlng.lat);
@@ -19,15 +24,8 @@ $(document).ready(function () {
     });
 
 
-    map.featureLayer.on('ready', function (e) {
-        map.featureLayer.eachLayer(function (layer) {
-            var item = markerList.appendChild(document.createElement('li'));
-            item.innerHTML = layer.toGeoJSON().properties.title;
-            item.onclick = function () {
-                map.setView(layer.getLatLng(), 14);
-                layer.openPopup();
-            };
-        });
+    myLayer.on('ready', function (e) {
+        map.fitBounds(myLayer.getBounds());
     });
 
 // This uses the HTML5 geolocation API, which is available on

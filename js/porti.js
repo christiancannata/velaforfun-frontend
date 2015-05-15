@@ -10,43 +10,22 @@ $(document).ready(function () {
     // Create a map in the div #map
     var map = L.mapbox.map('map', 'mapbox.streets');
     var myLayer = L.mapbox.featureLayer()
-        .loadURL('/json/markers.geojson')
+        .loadURL('/json/porti.geojson')
         .addTo(map);
     var markerList = document.getElementById('marker-list');
-    map.on('click', function (e) {
-       // $("#latitudine").val(e.latlng.lat);
-      //  $("#longitudine").val(e.latlng.lng);
-        $("#loading-porto").show();
-        $(".porto-title").css("opacity","0.5");
-        $(".porto-content").css("opacity","0.5");
-
-        $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + e.latlng.lat + "&lon=" + e.latlng.lng,
-            dataType: "json",
-            success: function (location) {
-
-                $("#porto-nome").html(location.name);
-
-                $("#porto-temperatura").html(location.main.temp+"°");
-                console.log(location);
-                $("#loading-porto").hide();
-                $(".porto-title").css("opacity","1");
-                $(".porto-content").css("opacity","1");
-            }
-        });
-
-    });
 
     myLayer.on('click', function (e) {
         var marker = e.layer;
         feature = marker.feature;
-        var id = feature.properties.id;
+        var id = feature.id;
 
         $.ajax({
             url: "/porti/" + id + ".json",
             dataType: "json",
             success: function (response) {
-
+                $("#loading-porto").show();
+                $(".porto-title").css("opacity","0.5");
+                $(".porto-content").css("opacity","0.5");
 
                 //SET CONTENUTO DEL PORTO
 
@@ -56,6 +35,21 @@ $(document).ready(function () {
                     success: function (response) {
 
                         console.log(response);
+
+                        $.ajax({
+                            url: "http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + e.latlng.lat + "&lon=" + e.latlng.lng,
+                            dataType: "json",
+                            success: function (location) {
+
+                                $("#porto-nome").html(location.name);
+
+                                $("#porto-temperatura").html(parseInt(location.main.temp)+"°");
+                                console.log(location);
+                                $("#loading-porto").hide();
+                                $(".porto-title").css("opacity","1");
+                                $(".porto-content").css("opacity","1");
+                            }
+                        });
                     }
                 });
 
@@ -65,8 +59,8 @@ $(document).ready(function () {
     });
 
 
-    map.featureLayer.on('ready', function (e) {
-
+    myLayer.on('ready', function (e) {
+        map.fitBounds(myLayer.getBounds());
 
         map.featureLayer.eachLayer(function (layer) {
             var item = markerList.appendChild(document.createElement('li'));

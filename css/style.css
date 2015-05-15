@@ -8,6 +8,7 @@ body {
 h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
+    color: rgb(66, 156, 188);
 }
 
 form label {
@@ -23,7 +24,7 @@ form label {
 }
 
 .box-home {
-    height: 200px;
+    height: 204px;
     cursor: pointer;
 }
 
@@ -34,7 +35,7 @@ form label {
     float: left;
 }
 
-.box-home .content .box-action {
+.box-home .content .box-action,.box-home .content .box-no-action  {
     float: left;
     height: 100%;
     width: 100%;
@@ -50,7 +51,7 @@ form label {
     background: none repeat scroll 0 0 white;
     float: left;
     text-align: center;
-    color: rgba(66, 156, 188, 0.8);
+    color: rgba(66, 156, 188, 1);
     width: 100%;
     margin-top: 100px;
 }
@@ -107,7 +108,7 @@ form label {
 }
 
 .content-title h3 {
-    font-size: 30px;
+    font-size: 2.4vw;
 
 }
 
@@ -152,9 +153,9 @@ ul.content {
 
 }
 
-.latest-news h4 {
-    color: rgb(66, 156, 188);
-    font-size: 26px;
+.latest-news h4,.summary h2 {
+    color: rgb(66, 156, 188) !important;
+    font-size: 26px !important;
 }
 
 .latest-news:hover {
@@ -171,7 +172,6 @@ ul.content {
     float: left;
     width: 10%;
     text-align: center;
-    position: relative;
     height: 8em;
 }
 
@@ -481,7 +481,7 @@ a:hover, #menu-login a:hover, #menu-login a:active {
     background: rgb(66, 156, 188);
 }
 
-.box-home:hover h2 {
+.box-home:hover .box-action h2 {
     margin-top: 0px;
     /*  -webkit-transition: margin-top 0.4s;
       -moz-transition: margin-top 0.4s;
@@ -489,7 +489,7 @@ a:hover, #menu-login a:hover, #menu-login a:active {
       -o-transition: margin-top 0.4s;
       transition: margin-top 0.4s; */
     color: rgb(255, 255, 255);
-
+    padding-bottom:5px;
     background: rgba(66, 156, 188, 0.8);
 }
 
@@ -511,7 +511,7 @@ a:hover, #menu-login a:hover, #menu-login a:active {
 .box-home:hover .over-box {
     /*display: block;*/
     opacity: 1;
-    transition: opacity 0.0s linear;
+    transition: opacity 0.1s linear;
     background: rgba(66, 156, 188, 0.8);
 }
 
@@ -613,4 +613,80 @@ a:hover, #menu-login a:hover, #menu-login a:active {
     height: 5px;
     background: rgb(66, 156, 188);
     width: 100%;
+}
+
+.search-ui {
+    position: absolute;
+    right: 14px;
+    top: 3px;
+    width: 230px;
+    z-index: 1000;
+}
+
+.summary{
+    float:left;
+    width:70%;
+    padding-right:10px;
+    padding-left:10px;
+}
+.summary p{
+    padding:0;
+    background:none;
+    font-size: 18px;
+
+}
+.latest-news:hover .summary p{
+    color:white;
+}
+.article-image{
+    float:left;
+    width:20%;
+}
+.contenuto-articolo .latest-news .content {
+    width:100%;
+}
+.contenuto-articolo .latest-news .arrow {
+    font-size: 40px;
+    height: 100%;
+    padding-bottom: 20px;
+    padding-top: 42px;
+    color: rgb(66, 156, 188);
+
+}
+
+.contenuto-articolo .latest-news li:first{
+    border-top:none;
+}
+
+.box ul li{
+    border-top:1px solid rgb(153, 153, 153);
+    padding-top:10px;
+}
+.box h3{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.box .media{
+    font-size:12px;
+}
+.box{
+    float:left;
+}
+
+.meteo{
+    border-top:1px solid rgb(153, 153, 153);
+    border-bottom:1px solid rgb(153, 153, 153);
+}
+.main-article h3{
+    color:white;
+}
+.subtitle{
+    font-size:1.3vw
+}
+.box-home .table-hover{
+    padding:0;
+}
+.box-home .table-hover tbody tr:hover{
+    background: rgba(66, 156, 188, 0.8);
+
 }

@@ -13,6 +13,7 @@
 -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="./css/colori.css">
 
 </head>
 
@@ -22,41 +23,138 @@
 <div class="container">
 
 
-    <nav class="navbar navbar-default navbar-fixed-top" id="nav-top">
+    <nav class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+        <div class="container">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                        class="navbar-toggle collapsed" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand" style="padding:0"> <img src="images/logo.png" width="60"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown
+                            <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../navbar/">Default</a></li>
+                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top visible-md visible-lg" id="nav-top">
         <div class="container-fluid">
             <div class="row clearfix">
-                <div class="col-md-4 column">
+                <div class="col-md-3 column">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false"> <i class="fa fa-bars fa-lg"></i> Tutte le sezioni</a>
                             <ul class="dropdown-menu" role="menu">
 
-                                <li><a href="#">Action</a></li>
+                                <li><a class="bordered blue" href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li>
+                                    <form method="GET">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Porto</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                   placeholder="Enter email">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-default">Cerca</button>
+                                    </form>
+                                </li>
                                 <li class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4 column">
-                    <div id="logo">
-                        VELAFORFUN
-                    </div>
+                <div class="col-md-6 column">
 
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div id="logo">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            VELAFORFUN
+                                        </div>
+                                        <div class="back">
+                                            <ul class="list-inline">
+                                                <li><a  class="hvr-glow" href="#">Link 1</a></li>
+                                                <li><a  class="hvr-glow" href="#">Link 2</a></li>
+                                                <li><a  class="hvr-glow" href="#">Link 3</a></li>
+                                                <li><a  class="hvr-glow" href="/"><img src="images/logo.png" width="50"></a></li>
+                                                <li><a  class="hvr-glow" href="#">Link 4</a></li>
+                                                <li><a  class="hvr-glow" href="#">Link 5</a></li>
+                                                <li><a  class="hvr-glow" href="#">Link 4</a></li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 column">
+                <div class="col-md-3 column ">
                     <ul class="list-inline" id="menu-login">
-                        <li>Sei già iscritto?</li>
-                        <li><a href="#">ACCEDI</a></li>
+                        <li><span>Sei già iscritto?</span></li>
+                        <li class="dropdown" id="menuLogin">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin"
+                               style="border:none">ACCEDI</a>
+
+                            <div class="dropdown-menu" style="padding:17px;">
+                                <form method="GET">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Username</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                               placeholder="Nome utente">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputEmail1"
+                                               placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Accedi</button>
+                                </form>
+                            </div>
+                        </li>
                         <li><a href="#">REGISTRATI</a></li>
                     </ul>
+
                 </div>
             </div>
+
+
         </div>
         <!-- /.container-fluid -->
     </nav>
@@ -95,46 +193,69 @@
     </div>
     <!-- fine contenuto -->
 
-
-    <div class="row clearfix">
-        <div class="col-md-6 column">
-            <div class="box-grande">
-
-            </div>
-        </div>
-        <div class="col-md-6 column">
-            <div class="box-footer">
-                Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa
-                qe veritatis et quasi architecto.
-                QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA.
-            </div>
-        </div>
-    </div>
-
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="divisore"></div>
-        </div>
-    </div>
-
-
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="text-center">
-                <div class="logo">
-                    VELAFORFUN
-                </div>
-                <p>Velaforfun, IDI CHE-247.845.224, Via Livio 14 - 6830 Venezia (ITALIA), Tel. 0041 091 690 19 19 - ©
-                    2015 Velaforfun</p>
-
-                <p>Sicurezza dei dati e Privacy | Team editoriale | Linea editoriale | Come contattarci</p>
-            </div>
-        </div>
-    </div>
 </div>
+<div class="container-fluid" style="background:white;padding-top:20px">
+    <div class="container">
 
+
+        <div class="row clearfix">
+            <div class="col-md-6 column">
+                <div class="box-grande">
+
+                </div>
+            </div>
+            <div class="col-md-6 column box-footer">
+                <div class="row clearfix ">
+                    <div class="col-md-12 column">
+                        <h2>Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</h2>
+                        rem aperiam, eaque ipsa
+                        qe veritatis et quasi architecto.
+                        QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA.
+                        <div class="divisore-big"></div>
+                    </div>
+                </div>
+
+                <div class="row clearfix social">
+                    <div class="col-md-6 column">
+                        <a href="#" class="hvr-glow"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="hvr-glow"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <div class="col-md-6 column">
+                        <a href="#" class="hvr-glow"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="hvr-glow"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="divisore"></div>
+            </div>
+        </div>
+
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="text-center">
+                    <div class="logo">
+                        VELAFORFUN
+                    </div>
+                    <p>Velaforfun, IDI CHE-247.845.224, Via Livio 14 - 6830 Venezia (ITALIA), Tel. 0041 091 690 19
+                        19 -
+                        ©
+                        2015 Velaforfun</p>
+
+                    <p>Sicurezza dei dati e Privacy | Team editoriale | Linea editoriale | Come contattarci</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
 
 <div class="modal fade" id="modalPortolano">
     <div class="modal-dialog">
@@ -144,7 +265,7 @@
                 <h4 class="modal-title">Nuova segnalazione del Portolano</h4>
             </div>
             <form method="POST">
-            <div class="modal-body">
+                <div class="modal-body">
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Titolo:</label>
@@ -153,27 +274,30 @@
                     </div>
                     <div class="form-group">
                         <label for="descrizione">Descrizione:</label>
-                        <textarea id="descrizione" name="descrizione" class="form-control" placeholder="Descrizione della segnalazione"></textarea>
+                        <textarea id="descrizione" name="descrizione" class="form-control"
+                                  placeholder="Descrizione della segnalazione"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="descrizione">Coordinate della segnalazione:</label>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="coordinate-x">Lat.</span>
-                            <input type="text" class="form-control" placeholder="Inserisci la coordinata" id="latitudine"  aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Inserisci la coordinata"
+                                   id="latitudine" aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon" id="coordinate-y">Long.</span>
-                            <input type="text" class="form-control"placeholder="Inserisci la coordinata" id="longitudine" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Inserisci la coordinata"
+                                   id="longitudine" aria-describedby="basic-addon1">
                         </div>
 
                     </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-                <button type="button" class="btn btn-primary">Inserisci</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary">Inserisci</button>
+                </div>
             </form>
         </div>
         <!-- /.modal-content -->
@@ -187,6 +311,10 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+<script src="./js/jQuery.progressTimer.js"></script>
+<script src="http://jscrollpane.kelvinluck.com/script/jquery.mousewheel.js"></script>
+<script src="http://jscrollpane.kelvinluck.com/script/mwheelIntent.js"></script>
+<script src="http://jscrollpane.kelvinluck.com/script/jquery.jscrollpane.min.js"></script>
 
 <script src="./js/main.js"></script>
 <script src="./js/portolano.js"></script>
