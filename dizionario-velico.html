@@ -13,8 +13,7 @@
 -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    <link rel="stylesheet" href="./css/colori.css">
-
+    <link rel="stylesheet" href="./css/scrollPane.css">
 </head>
 
 <body>
@@ -108,13 +107,13 @@
                                         </div>
                                         <div class="back">
                                             <ul class="list-inline">
-                                                <li><a  class="hvr-glow" href="#">Link 1</a></li>
-                                                <li><a  class="hvr-glow" href="#">Link 2</a></li>
-                                                <li><a  class="hvr-glow" href="#">Link 3</a></li>
-                                                <li><a  class="hvr-glow" href="/"><img src="images/logo.png" width="50"></a></li>
-                                                <li><a  class="hvr-glow" href="#">Link 4</a></li>
-                                                <li><a  class="hvr-glow" href="#">Link 5</a></li>
-                                                <li><a  class="hvr-glow" href="#">Link 4</a></li>
+                                                <li><a href="#">Link 1</a></li>
+                                                <li><a href="#">Link 2</a></li>
+                                                <li><a href="#">Link 3</a></li>
+                                                <li><a href="/"><img src="images/logo.png" width="50"></a></li>
+                                                <li><a href="#">Link 4</a></li>
+                                                <li><a href="#">Link 5</a></li>
+                                                <li><a href="#">Link 4</a></li>
                                             </ul>
 
                                         </div>
@@ -165,20 +164,23 @@
     <div class="row clearfix">
         <div class="col-md-8 column">
 
-            <h1>Portolano Online</h1>
+            <h1>Dizionario Velico</h1>
 
-            <div id='map'></div>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+            </form>
 
 
         </div>
         <div class="col-md-4 column">
-            <div class="content">
-            <p>
-                Portolano Online è un servizio innovativo che raccoglie le segnalazioni degli utenti per i mari che bagnano la penisola italiana. Qui sono raccolte tutte quelle indicazioni e particolarità che ognuno ha sperimentato e trovato navigando e che non sono segnalate sulle carte o alle quali non è dato sufficiente peso.
-                Troverai quindi accortezze nell'evitare secche, individuare fari, zone senza ridossi, allineamenti di ingresso e quant'altro ogni utente abbia ritenuto di segnalare a chi naviga in un particolare specchio d'acqua.
-                Ogni segnalazione può essere stampata con un'apposita pagina di formato ridotto che riporta la descrizione e le coordinate del pericolo/avviso così da poterla portare assieme al portolano quando si naviga, un sistema per aggiornare e arricchire il proprio portolano/libro di bordo.
-                Ricorda di aggiungere la tua segnalazione. Ti segnaliamo anche il servizio di commento per i porti italiani dove puoi trovare i commenti degli utenti.
-            </p>
+            <div class="porto-title">
+                <h1 id="porto-nome"></h1>
+            </div>
+            <div class="porto-content">
+
 
             </div>
 
@@ -187,6 +189,7 @@
     <!-- fine contenuto -->
 
 </div>
+
 <div class="container-fluid" style="background:white;padding-top:20px">
     <div class="container">
 
@@ -250,56 +253,6 @@
 
 </div>
 
-<div class="modal fade" id="modalPortolano">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Nuova segnalazione del Portolano</h4>
-            </div>
-            <form method="POST">
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Titolo:</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1"
-                               placeholder="Inserisci il titolo della segnalazione">
-                    </div>
-                    <div class="form-group">
-                        <label for="descrizione">Descrizione:</label>
-                        <textarea id="descrizione" name="descrizione" class="form-control"
-                                  placeholder="Descrizione della segnalazione"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="descrizione">Coordinate della segnalazione:</label>
-
-                        <div class="input-group">
-                            <span class="input-group-addon" id="coordinate-x">Lat.</span>
-                            <input type="text" class="form-control" placeholder="Inserisci la coordinata"
-                                   id="latitudine" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="coordinate-y">Long.</span>
-                            <input type="text" class="form-control" placeholder="Inserisci la coordinata"
-                                   id="longitudine" aria-describedby="basic-addon1">
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-                    <button type="button" class="btn btn-primary">Inserisci</button>
-                </div>
-            </form>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-
 <script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -308,9 +261,10 @@
 <script src="http://jscrollpane.kelvinluck.com/script/jquery.mousewheel.js"></script>
 <script src="http://jscrollpane.kelvinluck.com/script/mwheelIntent.js"></script>
 <script src="http://jscrollpane.kelvinluck.com/script/jquery.jscrollpane.min.js"></script>
+<script src="./js/bootstrap3-typeahead.min.js"></script>
 
 <script src="./js/main.js"></script>
-<script src="./js/portolano.js"></script>
+<script src="./js/porti.js"></script>
 <!--
 <script src="{{ asset('bundles/app/js/form.js') }}"></script>
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>

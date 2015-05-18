@@ -78,7 +78,9 @@ jQuery(document).ready(function ($) {
 
 
 
-
+    $.get('/json/portiItaliani.json', function (data) {
+        $("#selectPorto").typeahead({source: data});
+    }, 'json');
 
 
 
